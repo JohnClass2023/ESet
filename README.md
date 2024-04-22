@@ -16,7 +16,7 @@
 
 你需要start from scratch，实现一个 `template<class Key,class Compare = std::less<Key>>` 的 class，名为`ESet`。
 
-`ESet` 拥有 `iterator`。在修改`ESet`后，对之前老`iterator`的操作是未定义行为。Set的`iterator`本身不支持修改值，实质与`const_iterator`无异。
+`ESet` 拥有迭代器 `iterator`。在`ESet`中插入元素，之前老迭代器不会失效；删除时，指向删除点位置的迭代器失效，但是其他迭代器不会失效。Set的`iterator`本身不支持修改值，实质与`const_iterator`无异。
 
 > **Aside：对于其它容器（比如双向链表），同时实现`iterator`和`const_iterator`的最佳方式是使用继承，而非复制一遍代码。**
 >
