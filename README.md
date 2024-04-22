@@ -47,7 +47,7 @@
   std::pair<iterator, bool> emplace( Args&&... args ); 
   ```
 
-  将一个元素args放入ESet中。如已有该元素，则不插入。返回值第一维是对应位置的迭代器，第二维表示ESet是否真正发生过改变。最高可接受复杂度 $O(k\log n)$ ，其中`k`为参数的个数。
+  将一个元素args放入ESet中。如已有该元素，则不插入。返回值第一维是对应位置的迭代器，第二维表示ESet是否真正发生过改变。最高可接受复杂度 $O(\log n)$。
 
   > Note：在std::set中，使用emplace而非insert可以避免不必要的copy或move操作。
   >
