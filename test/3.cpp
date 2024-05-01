@@ -22,10 +22,10 @@ void test1() {
             std::cout << "Wrong!" << std::endl;
     } while (it != s.begin());
 
-    it = s.find(0);
-    it = it = it;
     s = s = s;
     s1 = s = s2 = s3 = s;
+    it = s.find(0);
+    it = it = it;
     ESet<int> s4 = s;
     s4.emplace(2333);
     if(s4.find(2333)==s4.end())std::cout<<"Wrong!"<<std::endl;
