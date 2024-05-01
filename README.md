@@ -16,7 +16,7 @@
 
 你需要start from scratch，实现一个 `template<class Key,class Compare = std::less<Key>>` 的 class，名为`ESet`。
 
-`ESet` 拥有迭代器 `iterator`。在`ESet`中插入元素，之前老迭代器不会失效；删除时，指向删除点位置的迭代器失效，但是其他迭代器不会失效。**（请注意这点与std::set的特性不同）**
+`ESet` 拥有迭代器 `iterator`。在`ESet`中插入元素，之前老迭代器不会失效；删除时，指向删除点位置的迭代器失效，但是其他迭代器不会失效，包括`end()`。**（请注意这点与std::set的特性不同）**
 
 Set的`iterator`本身不支持修改值，实质与`const_iterator`无异。
 
