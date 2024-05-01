@@ -64,11 +64,10 @@
   
 
 - ```c++
-  iterator find( const Key& key );
-  const_iterator find( const Key& key ) const;
+  iterator find( const Key& key ) const;
   ```
   
-  找到Key对应位置的iterator并返回。如果当前ESet是`const`的，返回的iterator也应是`const`的。如果没找到该元素，返回`end()`。最高可接受复杂度 $O(\log n)$ 。
+  找到Key对应位置的iterator并返回。如果没找到该元素，返回`end()`。最高可接受复杂度 $O(\log n)$ 。
   
   
   
@@ -91,7 +90,7 @@
   
   
 - ```c++
-  size_t range( const Key& l, const Key& r );
+  size_t range( const Key& l, const Key& r ) const;
   ```
 
   返回[l,r]内元素的个数。若l>r，返回0。最高可接受复杂度 $O(\log n)$ 。
@@ -107,17 +106,21 @@
   
   
 - ```c++
-  iterator lower_bound( const Key& key );
-  iterator upper_bound( const Key& key );
+  iterator lower_bound( const Key& key ) const;
+  iterator upper_bound( const Key& key ) const;
   ```
   
-  根据上/下界二分查找，返回对应位置的迭代器，期望功能同`lower_bound`和`upper_bound`的常规含义。最高可接受复杂度 $O(\log n)$ 。
+  根据上/下界二分查找，返回对应位置的迭代器，期望功能同`lower_bound`和`upper_bound`的常规含义。
 
+  具体来说，lower_bound需找到最小的>=key的元素；upper_bound需找到最小的>key的元素。
+
+  最高可接受复杂度 $O(\log n)$ 。
   
-
+  
+  
 - ```c++
-  iterator begin() noexcept;
-  iterator end() noexcept;
+  iterator begin() const noexcept;
+  iterator end() const noexcept;
   ```
   
   首/尾迭代器。最高可接受复杂度 $O(1)$ 。
