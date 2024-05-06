@@ -53,7 +53,14 @@ Set的`iterator`本身不支持修改值，实质与`const_iterator`无异。
 
   > Note：在std::set中，使用emplace而非insert可以避免不必要的copy或move操作。
   >
-  > 请注意，虽然函数原型是可变长参数，但你只需要处理emplace一个元素的情况即可。如传入多个元素，期望结果是编译错误（实际行为可以任选）。
+  > 请注意，虽然函数原型是可变长参数，但你只需要处理emplace一个元素的情况即可。如传入多个元素，实际行为可以任选。
+  >
+  > 在std::set中，emplace会使用std::forward调用元素的构造函数。如果传入多个参数，则会调用多个参数版本的构造函数，如：
+  >
+  > ```c++
+  > std::set<std::pair<int,std::string>> s;
+  > s.emplace(1,"a");
+  > ```
 
 
 
