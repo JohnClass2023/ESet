@@ -40,7 +40,7 @@ Set的`iterator`本身不支持修改值，实质与`const_iterator`无异。
   ~ESet();
   ```
 
-  构造和析构函数。构造函数最高可接受复杂度 $O(1)$ ，析构函数最高可接受复杂度 $O(n)$ 。
+  构造和析构函数。构造函数最高可接受复杂度 $O(1)$ ，析构函数最高可接受复杂度 $O(n\log n)$ 。
 
   
 
@@ -121,7 +121,7 @@ Set的`iterator`本身不支持修改值，实质与`const_iterator`无异。
   
   根据上/下界二分查找，返回对应位置的迭代器，期望功能同`lower_bound`和`upper_bound`的常规含义。
 
-  具体来说，lower_bound需找到最小的>=key的元素；upper_bound需找到最小的>key的元素。
+  具体来说，lower_bound需找到最小的>=key的元素；upper_bound需找到最小的>key的元素。如果没有这样的元素，返回`end()`。
 
   最高可接受复杂度 $O(\log n)$ 。
   
