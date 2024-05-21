@@ -85,7 +85,7 @@ Set的`iterator`本身不支持修改值，实质与`const_iterator`无异。
   ESet& operator=( const ESet& other );
   ```
 
-​		复制一个ESet到另一个。复制之后两个ESet应该是分离的，即对其中一个的操作不会影响另一个。最高可接受复杂度 $O(n)$ 。
+​		复制一个ESet到另一个。复制之后两个ESet应该是分离的，即对其中一个的操作不会影响另一个。最高可接受复杂度 $O(n\log n)$ 。
 
 
 
@@ -94,7 +94,7 @@ Set的`iterator`本身不支持修改值，实质与`const_iterator`无异。
   ESet& operator=( ESet&& other ) noexcept;
   ```
   
-  移动一个ESet到另一个。移动之后不应该有新增的空间，other应当被销毁。最高可接受复杂度 $O(n)$ 。
+  移动一个ESet到另一个。移动之后不应该有新增的空间，other应当被销毁。最高可接受复杂度 $O(n\log n)$ 。
   
   
   
